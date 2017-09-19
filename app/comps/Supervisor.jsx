@@ -14,7 +14,7 @@ export default class Supervisor extends React.Component{
 						<div className="mark_wrapper">
 						<p>{this.props.supervisorMark}</p>
 						</div>
-						<div>
+						<div className="name_wrapper">
 						<p>{this.props.supervisorName}</p>
 						</div>
 						

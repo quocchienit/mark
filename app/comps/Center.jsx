@@ -12,9 +12,8 @@ export default class Center extends React.Component{
 
 	render(){
 		return (
-				<div className="col-6 text-center">
+				<div className="col-6 text-center mark-center">
 						<div>
-						<h1> HỘI THI VĂN NGỆ </h1>
 						</div>
 							<div className="">
 							<p>{this.props.song} </p>
