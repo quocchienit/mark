@@ -1,0 +1,40 @@
+body {
+    background-color: #125bac;
+  	overflow: hidden;
+    color: #fff;
+
+    /*background-image: url("../img/DesktopTHP.jpg");*/
+
+
+
+}
+
+#wrapper_canvas{
+	position: absolute;
+    top: 0;
+}
+
+.supervisor{
+	    margin: 60px;
+}
+
+#start{
+	display: none;
+}
+
+.supervisor .mark_wrapper{
+	    width: 150px;
+    height: 150px;
+    margin: auto;
+        border: 1px solid;
+        position: relative;
+}
+
+.supervisor .mark_wrapper p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+}
