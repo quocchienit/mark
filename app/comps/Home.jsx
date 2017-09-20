@@ -34,24 +34,24 @@ export default class Home extends React.Component{
 
 	componentDidMount(){
 		setInterval(function(){
-			axios.get('http://192.168.23.2:88/Api/GetRecore?ExamId=8').then(res => {
+			axios.get('http://192.168.23.2:88/Api/GetRecore').then(res => {
 
 				
-				// if (res.data[0].Diem) {
-				// 	var sum = 0;
-				// 	for( var i = 0; i < res.data.length; i++ ){
-				// 	    sum += parseInt( res.data[i].Diem, 10 ); 
-				// 	}
+				if (res.data[0].Diem) {
+					var sum = 0;
+					for( var i = 0; i < res.data.length; i++ ){
+					    sum += parseInt( res.data[i].Diem, 10 ); 
+					}
 
-				// 	var avg = sum/res.data.length;
+					var avg = sum/res.data.length;
 
-			 // 		this.setState({
-			 // 				list:res.data,
-			 // 				avgMark:avg,
+			 		this.setState({
+			 				list:res.data,
+			 				avgMark:avg,
 
-			 // 			});
-			 // 		// $("#start").click();
-				// }
+			 			});
+			 		$("#start").click();
+				}
 		     });
 
 			axios.get('http://192.168.23.2:88/Api/GetExam').then(res => {

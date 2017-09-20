@@ -18,7 +18,6 @@ export default class Center extends React.Component{
 							<div className="">
 							<p>{this.props.song} </p>
 							<p>{this.props.singer} </p>
-							
 							<div>
 							<p> {this.props.avgMark}</p>
 							</div>
