@@ -50,7 +50,14 @@ export default class Home extends React.Component{
 
 					if (this.current_id != res.data.Id) {
 						this.firework = true;
+
 					}
+
+					console.log(this.current_id);
+					console.log(res.data.Id);
+					console.log(this.firework);
+
+
 
 		 			this.current_id = res.data.Id;
 		     });
@@ -79,9 +86,9 @@ export default class Home extends React.Component{
 			 			$("#start").click();
 			 			this.firework = false;
 			 		}
-			 		
+			 		this.firework = false;
 		     });
-		}.bind(this), 1000);
+		}.bind(this), 5000);
 
 
 	}
