@@ -58,6 +58,7 @@ export default class Home extends React.Component{
 			axios.get('http://192.168.23.2:88/Api/GetRecore').then(res => {
 
 					var sum = 0;
+					this.show = 1;
 					for( var i = 0; i < res.data.length; i++ ){
 					    sum += parseInt( res.data[i].Diem, 10 ); 
 					    res.data[i].class_animated = 'animated flip';

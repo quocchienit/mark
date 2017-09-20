@@ -23933,6 +23933,7 @@ var Home = function (_React$Component) {
 				_axios2.default.get('http://192.168.23.2:88/Api/GetRecore').then(function (res) {
 
 					var sum = 0;
+					_this2.show = 1;
 					for (var i = 0; i < res.data.length; i++) {
 						sum += parseInt(res.data[i].Diem, 10);
 						res.data[i].class_animated = 'animated flip';
