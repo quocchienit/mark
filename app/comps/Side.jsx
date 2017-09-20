@@ -18,23 +18,27 @@ export default class Side extends React.Component{
   }
 
 
-  	showMark(Diem){
+  	showMark(Diem, show){
+  		if (show) {
+  			return Diem
+  		}
 		if (Diem) {
-			return   Diem;
+			return   '?';
 		}
 		else
 		{
-			return  '?';
+			return  '';
 		}
-	}
 
 	
+	}
 
 	render(){
 		return (
 				<div className="col text-center">
 				{this.props.supervisorArray.map((item, i) =>
-		                	<Supervisor key={i} supervisorName={item.GiamKhao} supervisorMark={this.showMark(item.Diem)}  /> 
+
+		                	<Supervisor key={i} classAnimated={item.class_animated} supervisorName={item.GiamKhao} supervisorMark={this.showMark(item.Diem,this.props.show)}  /> 
 		        )}
 				</div>
 		);

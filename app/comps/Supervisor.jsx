@@ -9,10 +9,10 @@ export default class Supervisor extends React.Component{
 
 	render(){
 		return (
-				<div className="supervisor text-center">
-						
+				<div className="supervisor text-center ">
+
 						<div className="mark_wrapper">
-						<p>{this.props.supervisorMark}</p>
+						<p className={this.props.classAnimated} >{this.props.supervisorMark}</p>
 						</div>
 						<div className="name_wrapper">
 						<p>{this.props.supervisorName}</p>

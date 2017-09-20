@@ -7,6 +7,7 @@ import Home from './comps/Home.jsx';
 
 
 import normalize from './assets/lib/css/normalize.css'; 
+import animate from './assets/lib/css/animate.css'; 
 import bootstrapcss from './assets/lib/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css'; 
 import style from './assets/css/style.css'; 
 

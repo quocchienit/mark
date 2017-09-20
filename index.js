@@ -14,14 +14,14 @@ app.get('/', function(req,res){
 
 app.get('/update', function(req,res){
 		var a =			[
-						{name:"haha1", mark: 51},
-						{name:"haha2", mark: 62},
-						{name:"haha3", mark: 73},
-						{name:"haha4", mark: 84},
-						{name:"king5", mark: 95},
-						{name:"hunter6", mark: 14},
-						{name:"hehe7", mark: 14},
-						{name:"hehe8", mark: 15},
+						{GiamKhao:"haha1", Diem: 4},
+						{GiamKhao:"haha2", Diem: 7.25},
+						{GiamKhao:"haha3", Diem: 9.75},
+						{GiamKhao:"haha4", Diem: 84},
+						{GiamKhao:"king5", Diem: 2},
+						{GiamKhao:"hunter6", Diem: 3},
+						{GiamKhao:"hehe7", Diem: 14},
+						{GiamKhao:"hehe8", Diem: 8},
 					]
 
 		res.send(a);
