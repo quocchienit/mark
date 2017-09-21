@@ -35,7 +35,7 @@ export default class Center extends React.Component{
 							<p><span className="label-name">Thí sinh: </span><span className="singer-name">{this.props.division} - {this.props.theLoai}</span> </p>
 						</div>
 						<div className="avgMark">
-							<p><img src="http://localhost:3000/lib/logo.png"/></p>
+							<p></p>
 						</div>
 				</div>
 		);

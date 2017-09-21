@@ -25230,11 +25230,7 @@ var Center = function (_React$Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'avgMark' },
-					_react2.default.createElement(
-						'p',
-						null,
-						_react2.default.createElement('img', { src: 'http://localhost:3000/lib/logo.png' })
-					)
+					_react2.default.createElement('p', null)
 				)
 			);
 		}
