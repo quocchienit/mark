@@ -23897,19 +23897,17 @@ var Home = function (_React$Component) {
 		_this.state = {
 			list: [],
 			avgMark: 0,
-			song: 'Tên bài hát siêu dài Tên bài hát s dài Tên bài hát siêu dài ',
-			singer: 'Tên bài hát siêu dài Tên bài hát siêu d bài hát siêu dài ',
+			song: 'Tên bài hát',
+			singer: 'Ca sĩ',
 			song_id: '',
-			division: 'Tên bài hát  ',
+			division: 'Khối',
 			theLoai: 'Thể Loại ',
-
-			show: 0
+			show: 0 //Hiển thị điểm
 
 		};
 
-		_this.show = 1;
-		_this.current_id = 1;
-
+		_this.show = 1; //Hiển thị điểm
+		_this.current_id = 1; //Bài hát hiện tại
 		return _this;
 	}
 
@@ -23928,26 +23926,23 @@ var Home = function (_React$Component) {
 						theLoai: res.data.TheLoai
 					});
 
+					//Nếu chuyển bài mới mở lại chức năng bắn pháo hoa
 					if (_this2.current_id != res.data.Id) {
 						_this2.firework = true;
 						_this2.current_id = res.data.Id;
 					}
-
-					console.log(_this2.current_id);
-					console.log(res.data.Id);
-					console.log(_this2.firework);
 				});
 
 				_axios2.default.get('http://192.168.23.2:88/Api/GetRecore').then(function (res) {
-
 					var sum = 0;
-					_this2.show = 1;
+					_this2.show = 1; //Hiển thị điểm
 					for (var i = 0; i < res.data.length; i++) {
 						sum += parseInt(res.data[i].Diem, 10);
 						res.data[i].class_animated = 'animated flip';
+
 						if (res.data[i].Diem == 0) {
+							//Tồn tại 1 người chưa chấm điểm thì tắt hiển thị điểm
 							_this2.show = 0;
-							res.data[i].class_animated = 'animated zoomInLeft';
 						}
 					}
 
@@ -23955,6 +23950,7 @@ var Home = function (_React$Component) {
 					var avgFixed = 0;
 
 					if (_this2.show) {
+						//Nếu chưa hiển thị điểm thì không hiển thị tổng điểm
 						var avgFixed = avg.toFixed(2);
 					}
 
@@ -23964,6 +23960,7 @@ var Home = function (_React$Component) {
 						show: _this2.show
 					});
 
+					//Bắn pháo hoa khi show điểm
 					if (_this2.show && _this2.firework) {
 						(0, _jquery2.default)("#start").click();
 						_this2.firework = false;

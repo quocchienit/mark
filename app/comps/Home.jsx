@@ -10,26 +10,19 @@ export default class Home extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			list:
-					[
-						
-
-					],
+			list:[],
 			avgMark: 0,
-			song:'Tên bài hát siêu dài Tên bài hát s dài Tên bài hát siêu dài ',
-			singer:'Tên bài hát siêu dài Tên bài hát siêu d bài hát siêu dài ',
+			song:'Tên bài hát',
+			singer:'Ca sĩ',
 			song_id:'',
-			division:'Tên bài hát  ',
+			division:'Khối',
 			theLoai:'Thể Loại ',
-
-			show:0,
+			show:0, //Hiển thị điểm
 
 		}
 
-
-		 this.show = 1;
-		 this.current_id = 1;
-
+		 this.show = 1; //Hiển thị điểm
+		 this.current_id = 1; //Bài hát hiện tại
 	}
 
 
@@ -45,38 +38,31 @@ export default class Home extends React.Component{
 			 				theLoai:res.data.TheLoai,
 			 			});
 
-
+					//Nếu chuyển bài mới mở lại chức năng bắn pháo hoa
 					if (this.current_id != res.data.Id) {
 						this.firework = true;
 						this.current_id = res.data.Id;
 					}
-
-					console.log(this.current_id);
-					console.log(res.data.Id);
-					console.log(this.firework);
-
-
-
 		 			
 		     });
 			
 			axios.get('http://192.168.23.2:88/Api/GetRecore').then(res => {
-
 					var sum = 0;
-					this.show = 1;
+					this.show = 1; //Hiển thị điểm
 					for( var i = 0; i < res.data.length; i++ ){
 					    sum += parseInt( res.data[i].Diem, 10 ); 
 					    res.data[i].class_animated = 'animated flip';
-					    if (res.data[i].Diem == 0) {
-					    	this.show = 0;
-					    	res.data[i].class_animated = 'animated zoomInLeft';
+
+					    if (res.data[i].Diem == 0) { //Tồn tại 1 người chưa chấm điểm thì tắt hiển thị điểm
+					    	this.show = 0; 
 					    }
+
 					}
 
 					var avg = sum/res.data.length;
     				var avgFixed = 0;
 
-    				if (this.show) {
+    				if (this.show) { //Nếu chưa hiển thị điểm thì không hiển thị tổng điểm
     					var avgFixed = avg.toFixed(2)
     				}
 
@@ -86,6 +72,7 @@ export default class Home extends React.Component{
 			 				show:this.show,
 			 			});
 
+			 		//Bắn pháo hoa khi show điểm
 			 		if (this.show && this.firework) {
 			 			$("#start").click();
 			 			this.firework = false;
