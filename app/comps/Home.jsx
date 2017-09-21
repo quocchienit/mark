@@ -12,24 +12,28 @@ export default class Home extends React.Component{
 		this.state = {
 			list:
 					[
-						{GiamKhao:"haha1", Diem: 0,},
-						{GiamKhao:"haha2", Diem: 0},
-						{GiamKhao:"haha3", Diem: 0},
-						{GiamKhao:"haha4", Diem: 0},
-						{GiamKhao:"king5", Diem: 0},
-						{GiamKhao:"hunter6", Diem: 0},
-						{GiamKhao:"hehe7", Diem: 0},
-						{GiamKhao:"hehe8", Diem: 0},
-						{GiamKhao:"hehe7", Diem: 0},
-						{GiamKhao:"hehe8", Diem: 0},
+						{GiamKhao:"haha1", Diem: 9.75,},
+						{GiamKhao:"haha2", Diem: 10},
+						{GiamKhao:"haha3", Diem: 6.75},
+						{GiamKhao:"haha4", Diem: 5.75},
+						{GiamKhao:"king5", Diem: 10},
+						{GiamKhao:"hunter6", Diem: 10},
+						{GiamKhao:"hehe7", Diem: 8.25},
+						{GiamKhao:"hehe8", Diem: 7.50},
+						{GiamKhao:"hehe7", Diem: 6.00},
+						{GiamKhao:"hehe8", Diem: 9.00},
 					],
 			avgMark: 0,
-			song:'',
-			singer:'',
+			song:'Tên bài hát siêu dài Tên bài hát s dài Tên bài hát siêu dài ',
+			singer:'Tên bài hát siêu dài Tên bài hát siêu d bài hát siêu dài ',
 			song_id:'',
+			division:'Tên bài hát  ',
+			theLoai:'Thể Loại ',
+
 			show:0,
 
 		}
+
 
 		 this.show = 1;
 		 this.current_id = 1;
@@ -44,7 +48,9 @@ export default class Home extends React.Component{
 				this.setState({
 			 				song:res.data.Name,
 			 				singer:res.data.UserName,
-			 				song_id:res.data.Id
+			 				song_id:res.data.Id,
+			 				division:res.data.Division,
+			 				theLoai:res.data.TheLoai,
 			 			});
 
 
@@ -76,9 +82,12 @@ export default class Home extends React.Component{
 					}
 
 					var avg = sum/res.data.length;
+    				var avgFixed = avg.toFixed(2)
+
+
 			 		this.setState({
 			 				list: res.data,
-			 				avgMark:avg,
+			 				avgMark:avgFixed,
 			 				show:this.show,
 			 			});
 
@@ -98,7 +107,7 @@ export default class Home extends React.Component{
 				<section className="container-fluid">
 					<div className="row">
 		                <Side  show={this.state.show}    supervisorArray={this.state.list.slice(0, 4)}  />
-						<Center avgMark={this.state.avgMark}    song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
+						<Center avgMark={this.state.avgMark}  theLoai={this.state.theLoai}     division={this.state.division}   song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
 						<Side show={this.state.show}   supervisorArray={this.state.list.slice(4, 8)}/>
 					</div>
 				</section>

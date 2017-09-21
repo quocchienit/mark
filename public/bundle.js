@@ -23895,11 +23895,14 @@ var Home = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
 		_this.state = {
-			list: [{ GiamKhao: "haha1", Diem: 0 }, { GiamKhao: "haha2", Diem: 0 }, { GiamKhao: "haha3", Diem: 0 }, { GiamKhao: "haha4", Diem: 0 }, { GiamKhao: "king5", Diem: 0 }, { GiamKhao: "hunter6", Diem: 0 }, { GiamKhao: "hehe7", Diem: 0 }, { GiamKhao: "hehe8", Diem: 0 }, { GiamKhao: "hehe7", Diem: 0 }, { GiamKhao: "hehe8", Diem: 0 }],
+			list: [{ GiamKhao: "haha1", Diem: 9.75 }, { GiamKhao: "haha2", Diem: 10 }, { GiamKhao: "haha3", Diem: 6.75 }, { GiamKhao: "haha4", Diem: 5.75 }, { GiamKhao: "king5", Diem: 10 }, { GiamKhao: "hunter6", Diem: 10 }, { GiamKhao: "hehe7", Diem: 8.25 }, { GiamKhao: "hehe8", Diem: 7.50 }, { GiamKhao: "hehe7", Diem: 6.00 }, { GiamKhao: "hehe8", Diem: 9.00 }],
 			avgMark: 0,
-			song: '',
-			singer: '',
+			song: 'Tên bài hát siêu dài Tên bài hát s dài Tên bài hát siêu dài ',
+			singer: 'Tên bài hát siêu dài Tên bài hát siêu d bài hát siêu dài ',
 			song_id: '',
+			division: 'Tên bài hát  ',
+			theLoai: 'Thể Loại ',
+
 			show: 0
 
 		};
@@ -23920,7 +23923,9 @@ var Home = function (_React$Component) {
 					_this2.setState({
 						song: res.data.Name,
 						singer: res.data.UserName,
-						song_id: res.data.Id
+						song_id: res.data.Id,
+						division: res.data.Division,
+						theLoai: res.data.TheLoai
 					});
 
 					if (_this2.current_id != res.data.Id) {
@@ -23948,9 +23953,11 @@ var Home = function (_React$Component) {
 					}
 
 					var avg = sum / res.data.length;
+					var avgFixed = avg.toFixed(2);
+
 					_this2.setState({
 						list: res.data,
-						avgMark: avg,
+						avgMark: avgFixed,
 						show: _this2.show
 					});
 
@@ -23972,7 +23979,7 @@ var Home = function (_React$Component) {
 					'div',
 					{ className: 'row' },
 					_react2.default.createElement(_Side2.default, { show: this.state.show, supervisorArray: this.state.list.slice(0, 4) }),
-					_react2.default.createElement(_Center2.default, { avgMark: this.state.avgMark, song: this.state.song, singer: this.state.singer, song_id: this.state.song_id }),
+					_react2.default.createElement(_Center2.default, { avgMark: this.state.avgMark, theLoai: this.state.theLoai, division: this.state.division, song: this.state.song, singer: this.state.singer, song_id: this.state.song_id }),
 					_react2.default.createElement(_Side2.default, { show: this.state.show, supervisorArray: this.state.list.slice(4, 8) })
 				)
 			);
@@ -24912,9 +24919,9 @@ var Side = function (_React$Component) {
 	}, {
 		key: 'showMark',
 		value: function showMark(Diem, show) {
-			if (show) {
-				return Diem;
-			}
+			// if (show) {
+			return Diem;
+			// }
 			if (Diem) {
 				return '?';
 			} else {
@@ -25056,31 +25063,51 @@ var Center = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'col-6 text-center mark-center' },
-				_react2.default.createElement('div', null),
 				_react2.default.createElement(
 					'div',
-					{ className: '' },
+					{ className: 'show-song' },
 					_react2.default.createElement(
 						'p',
-						null,
-						this.props.song,
-						' '
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						this.props.singer,
-						' '
-					),
-					_react2.default.createElement(
-						'div',
 						null,
 						_react2.default.createElement(
-							'p',
-							null,
+							'span',
+							{ className: 'label-name' },
+							'T\xEAn b\xE0i h\xE1t: '
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: 'song-name' },
 							' ',
-							this.props.avgMark
+							this.props.song,
+							' '
 						)
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						_react2.default.createElement(
+							'span',
+							{ className: 'label-name' },
+							'Th\xED sinh: '
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: 'singer-name' },
+							this.props.division,
+							' - ',
+							this.props.theLoai
+						),
+						' '
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'avgMark' },
+					_react2.default.createElement(
+						'p',
+						null,
+						' ',
+						this.props.avgMark
 					)
 				)
 			);
@@ -35622,7 +35649,7 @@ exports = module.exports = __webpack_require__(35)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n  \toverflow: hidden;\r\n    color: #fff;\r\n}\r\n.mark-center {\r\n    padding:60px;\r\n}\r\n\r\n#wrapper_canvas{\r\n\tposition: absolute;\r\n    top: 0;\r\n}\r\n\r\n.supervisor{\r\n\t    margin: 60px;\r\n}\r\n\r\n#start{\r\n\tdisplay: none;\r\n}\r\n\r\n.supervisor .mark_wrapper{\r\n\t    width: 150px;\r\n    height: 150px;\r\n    margin: auto;\r\n        border: 1px solid;\r\n        position: relative;\r\n                background: yellowgreen;\r\n}\r\n\r\n.supervisor .mark_wrapper p{\r\n    position: absolute;\r\n    top: 35%;\r\n    left: 50%;\r\n    height: 30%;\r\n    width: 50%;\r\n    margin: -15% 0 0 -25%;\r\n    color: #292b2c;\r\n    font-size: 69px;\r\n}\r\n\r\n.supervisor .name_wrapper{\r\nbackground: crimson;\r\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "body {\r\n    overflow: hidden;\r\n    color: #fff;\r\n    background-repeat: no-repeat;\r\n    background-size: 100% 1024px;\r\n}\r\n\r\n.mark-center {\r\n    padding: 60px;\r\n}\r\n\r\n#wrapper_canvas {\r\n    position: absolute;\r\n    top: 0;\r\n}\r\n\r\n.supervisor {\r\n    margin: 60px;\r\n}\r\n\r\n#start {\r\n    display: none;\r\n}\r\n\r\n.supervisor .mark_wrapper {\r\n    width: 218px;\r\n    height: 133px;\r\n    margin: auto;\r\n    border: 1px solid;\r\n    position: relative;\r\n    background: #ffffff;\r\n    border-radius: 15px;\r\n}\r\n\r\n.supervisor .mark_wrapper p {\r\n    position: absolute;\r\n    top: 35%;\r\n    left: 48%;\r\n    height: 30%;\r\n    width: 50%;\r\n    margin: -15% 0 0 -25%;\r\n    color: #ff0000;\r\n    font-size: 69px;\r\n}\r\n\r\n.supervisor .name_wrapper {\r\n    width: 218px;\r\n    height: 50px;\r\n    margin: auto;\r\n    border: 1px solid;\r\n    position: relative;\r\n    background: #ffffff;\r\n    border-radius: 15px;\r\n    margin-top: 3px;\r\n}\r\n\r\n.supervisor .name_wrapper p {\r\n    color: #1350dc;\r\n    font-size: 31px;\r\n    font-weight: bold;\r\n}\r\n.show-song{\r\n    min-height: 133px;\r\n    margin: auto;\r\n    border: 1px solid;\r\n    position: relative;\r\n    background: #ffffff;\r\n    border-radius: 15px;\r\n    margin-top: 302px;\r\n        text-align: left;\r\n    padding: 25px;\r\n}\r\n.show-song p{\r\n    margin: 0px;\r\n    font-size: 35px;\r\n    font-style: italic;\r\n}\r\n.avgMark{\r\n    min-height: 400px;\r\n    margin: auto;\r\n    border: 1px solid;\r\n    position: relative;\r\n    background: #ffffff;\r\n    border-radius: 15px;\r\n    margin-top: 10px;\r\n}\r\n\r\n.label-name{\r\n      color: #1350dc;\r\n      margin-right: 20px;\r\n}\r\n.song-name{\r\n    color: #ff0000;\r\n    font-style: initial;\r\n    font-weight: bold;\r\n}\r\n.singer-name{\r\n    color: #1350dc;\r\n    font-style: initial;\r\n    font-weight: bold;\r\n\r\n}\r\n.division-name{\r\n    color: #1350dc;\r\n    font-style: initial;\r\n\r\n\r\n}\r\n.avgMark p{\r\n         position: absolute;\r\n    top: 35%;\r\n    left: 48%;\r\n    height: 30%;\r\n    width: 50%;\r\n    margin: -15% 0 0 -25%;\r\n    color: #ff0000;\r\n    font-size: 200px;\r\n    \r\n}\r\n", ""]);
 
 // exports
 

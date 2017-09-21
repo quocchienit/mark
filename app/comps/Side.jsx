@@ -19,9 +19,9 @@ export default class Side extends React.Component{
 
 
   	showMark(Diem, show){
-  		if (show) {
+  		// if (show) {
   			return Diem
-  		}
+  		// }
 		if (Diem) {
 			return   '?';
 		}

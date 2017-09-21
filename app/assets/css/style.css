@@ -1,48 +1,119 @@
 body {
-  	overflow: hidden;
+    overflow: hidden;
     color: #fff;
-}
-.mark-center {
-    padding:60px;
+    background-repeat: no-repeat;
+    background-size: 100% 1024px;
 }
 
-#wrapper_canvas{
-	position: absolute;
+.mark-center {
+    padding: 60px;
+}
+
+#wrapper_canvas {
+    position: absolute;
     top: 0;
 }
 
-.supervisor{
-	    margin: 60px;
+.supervisor {
+    margin: 60px;
 }
 
-#start{
-	display: none;
+#start {
+    display: none;
 }
 
-.supervisor .mark_wrapper{
-	    width: 150px;
-    height: 150px;
+.supervisor .mark_wrapper {
+    width: 218px;
+    height: 133px;
     margin: auto;
-        border: 1px solid;
-        position: relative;
-                background: yellowgreen;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
 }
 
-.supervisor .mark_wrapper p{
+.supervisor .mark_wrapper p {
     position: absolute;
     top: 35%;
-    left: 50%;
+    left: 48%;
     height: 30%;
     width: 50%;
     margin: -15% 0 0 -25%;
-    color: #292b2c;
+    color: #ff0000;
     font-size: 69px;
 }
 
-.supervisor .name_wrapper{
-background: crimson;
+.supervisor .name_wrapper {
+    width: 218px;
+    height: 50px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    margin-top: 3px;
 }
 
+.supervisor .name_wrapper p {
+    color: #1350dc;
+    font-size: 31px;
+    font-weight: bold;
+}
+.show-song{
+    min-height: 133px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    margin-top: 302px;
+        text-align: left;
+    padding: 25px;
+}
+.show-song p{
+    margin: 0px;
+    font-size: 35px;
+    font-style: italic;
+}
+.avgMark{
+    min-height: 400px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.label-name{
+      color: #1350dc;
+      margin-right: 20px;
+}
+.song-name{
+    color: #ff0000;
+    font-style: initial;
+    font-weight: bold;
+}
+.singer-name{
+    color: #1350dc;
+    font-style: initial;
+    font-weight: bold;
+
+}
+.division-name{
+    color: #1350dc;
+    font-style: initial;
 
 
-
+}
+.avgMark p{
+         position: absolute;
+    top: 35%;
+    left: 48%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    color: #ff0000;
+    font-size: 200px;
+    
+}
