@@ -15,7 +15,7 @@ body {
 }
 
 .supervisor {
-    margin: 60px;
+    margin: 20px 60px 0px 60px;
 }
 
 #start {
@@ -24,7 +24,7 @@ body {
 
 .supervisor .mark_wrapper {
     width: 218px;
-    height: 133px;
+       height: 120px;
     margin: auto;
     border: 1px solid;
     position: relative;
@@ -34,7 +34,7 @@ body {
 
 .supervisor .mark_wrapper p {
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 48%;
     height: 30%;
     width: 50%;
@@ -45,7 +45,7 @@ body {
 
 .supervisor .name_wrapper {
     width: 218px;
-    height: 50px;
+    min-height: 50px;
     margin: auto;
     border: 1px solid;
     position: relative;
@@ -58,6 +58,8 @@ body {
     color: #1350dc;
     font-size: 31px;
     font-weight: bold;
+    margin: 0px;
+        padding: 0px 10px;
 }
 .show-song{
     min-height: 133px;
@@ -66,7 +68,7 @@ body {
     position: relative;
     background: #ffffff;
     border-radius: 15px;
-    margin-top: 302px;
+    margin-top: 280px;
         text-align: left;
     padding: 25px;
 }
@@ -115,5 +117,49 @@ body {
     margin: -15% 0 0 -25%;
     color: #ff0000;
     font-size: 200px;
+
+}
+
+
+
+.mark_wrapper p.wait_show {
+
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
     
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotateY(0deg); }
+    to { -ms-transform: rotateY(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotateY(0deg); }
+    to { -moz-transform: rotateY(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotateY(0deg);
+    }
+    to {
+        transform:rotateY(360deg);
+    }
 }

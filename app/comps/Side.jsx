@@ -14,22 +14,23 @@ export default class Side extends React.Component{
 
 	componentWillReceiveProps(nextProps) {
 
-		console.log(nextProps);
+		// console.log(nextProps);
   }
 
 
   	showMark(Diem, show){
-  		// if (show) {
+  		if (show) {
   			return Diem
-  		// }
-		if (Diem) {
-			return   '?';
-		}
-		else
-		{
-			return  '';
-		}
+  		}
 
+  		var showLogo = -2; 
+
+		if (Diem) {
+			showLogo = -1; //nếu có điểm thì hiển thị logo. Để -1 vì để không trùng với điểm trả về.
+			return  showLogo;
+		}
+		
+		return showLogo
 	
 	}
 
@@ -37,8 +38,7 @@ export default class Side extends React.Component{
 		return (
 				<div className="col text-center">
 				{this.props.supervisorArray.map((item, i) =>
-
-		                	<Supervisor key={i} classAnimated={item.class_animated} supervisorName={item.GiamKhao} supervisorMark={this.showMark(item.Diem,this.props.show)}  /> 
+		                	<Supervisor key={i} classAnimated={item.class_animated}  jobTitle={item.ChucDanh}  supervisorName={item.GiamKhao} supervisorMark={this.showMark(item.Diem,this.props.show)}  /> 
 		        )}
 				</div>
 		);

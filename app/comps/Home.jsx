@@ -12,16 +12,8 @@ export default class Home extends React.Component{
 		this.state = {
 			list:
 					[
-						{GiamKhao:"haha1", Diem: 9.75,},
-						{GiamKhao:"haha2", Diem: 10},
-						{GiamKhao:"haha3", Diem: 6.75},
-						{GiamKhao:"haha4", Diem: 5.75},
-						{GiamKhao:"king5", Diem: 10},
-						{GiamKhao:"hunter6", Diem: 10},
-						{GiamKhao:"hehe7", Diem: 8.25},
-						{GiamKhao:"hehe8", Diem: 7.50},
-						{GiamKhao:"hehe7", Diem: 6.00},
-						{GiamKhao:"hehe8", Diem: 9.00},
+						
+
 					],
 			avgMark: 0,
 			song:'Tên bài hát siêu dài Tên bài hát s dài Tên bài hát siêu dài ',
@@ -56,7 +48,7 @@ export default class Home extends React.Component{
 
 					if (this.current_id != res.data.Id) {
 						this.firework = true;
-
+						this.current_id = res.data.Id;
 					}
 
 					console.log(this.current_id);
@@ -65,7 +57,7 @@ export default class Home extends React.Component{
 
 
 
-		 			this.current_id = res.data.Id;
+		 			
 		     });
 			
 			axios.get('http://192.168.23.2:88/Api/GetRecore').then(res => {
@@ -82,8 +74,11 @@ export default class Home extends React.Component{
 					}
 
 					var avg = sum/res.data.length;
-    				var avgFixed = avg.toFixed(2)
+    				var avgFixed = 0;
 
+    				if (this.show) {
+    					var avgFixed = avg.toFixed(2)
+    				}
 
 			 		this.setState({
 			 				list: res.data,
@@ -95,20 +90,18 @@ export default class Home extends React.Component{
 			 			$("#start").click();
 			 			this.firework = false;
 			 		}
-			 		this.firework = false;
+			 		
 		     });
 		}.bind(this), 5000);
-
-
 	}
 
 	render(){
 		return (
 				<section className="container-fluid">
 					<div className="row">
-		                <Side  show={this.state.show}    supervisorArray={this.state.list.slice(0, 4)}  />
+		                <Side  show={this.state.show}    supervisorArray={this.state.list.slice(0, 5)}  />
 						<Center avgMark={this.state.avgMark}  theLoai={this.state.theLoai}     division={this.state.division}   song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
-						<Side show={this.state.show}   supervisorArray={this.state.list.slice(4, 8)}/>
+						<Side show={this.state.show}   supervisorArray={this.state.list.slice(5, 10)}/>
 					</div>
 				</section>
 		);
