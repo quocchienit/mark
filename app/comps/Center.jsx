@@ -19,8 +19,8 @@ export default class Center extends React.Component{
 							<p><span className="label-name">Tên bài hát: </span><span className="song-name">	{this.props.song} </span></p>
 							<p><span className="label-name">Thí sinh: </span><span className="singer-name">{this.props.division} - {this.props.theLoai}</span> </p>
 						</div>
-						<div className="avgMark">
-							<p> {this.props.avgMark}</p>
+						<div className="avgMark ">
+							<p className={this.props.animated_avgMark}> {this.props.avgMark}</p>
 						</div>
 				</div>
 		);

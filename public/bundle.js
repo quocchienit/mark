@@ -23902,7 +23902,8 @@ var Home = function (_React$Component) {
 			song_id: '',
 			division: 'Khối',
 			theLoai: 'Thể Loại ',
-			show: 0 //Hiển thị điểm
+			show: 0, //Hiển thị điểm
+			animated_avgMark: ""
 
 		};
 
@@ -23950,16 +23951,21 @@ var Home = function (_React$Component) {
 
 					var avg = sum / res.data.length;
 					var avgFixed = 0;
+					var edit_animated_avgMark = "";
 
 					if (_this2.show) {
 						//Nếu chưa hiển thị điểm thì không hiển thị tổng điểm
-						var avgFixed = avg.toFixed(2);
+						avgFixed = avg.toFixed(2);
+
+						edit_animated_avgMark = 'animated jackInTheBox';
 					}
 
 					_this2.setState({
 						list: res.data,
 						avgMark: avgFixed,
-						show: _this2.show
+						show: _this2.show,
+						animated_avgMark: edit_animated_avgMark
+
 					});
 
 					//Bắn pháo hoa khi show điểm
@@ -23980,7 +23986,7 @@ var Home = function (_React$Component) {
 					'div',
 					{ className: 'row' },
 					_react2.default.createElement(_Side2.default, { show: this.state.show, supervisorArray: this.state.list.slice(0, 5) }),
-					_react2.default.createElement(_Center2.default, { avgMark: this.state.avgMark, theLoai: this.state.theLoai, division: this.state.division, song: this.state.song, singer: this.state.singer, song_id: this.state.song_id }),
+					_react2.default.createElement(_Center2.default, { animated_avgMark: this.state.animated_avgMark, avgMark: this.state.avgMark, theLoai: this.state.theLoai, division: this.state.division, song: this.state.song, singer: this.state.singer, song_id: this.state.song_id }),
 					_react2.default.createElement(_Side2.default, { show: this.state.show, supervisorArray: this.state.list.slice(5, 10) })
 				)
 			);
@@ -25175,10 +25181,10 @@ var Center = function (_React$Component) {
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'avgMark' },
+						{ className: 'avgMark ' },
 						_react2.default.createElement(
 							'p',
-							null,
+							{ className: this.props.animated_avgMark },
 							' ',
 							this.props.avgMark
 						)

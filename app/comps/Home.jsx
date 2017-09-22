@@ -29,6 +29,8 @@ export default class Home extends React.Component{
 			division:'Khối',
 			theLoai:'Thể Loại ',
 			show:0, //Hiển thị điểm
+			animated_avgMark:"", 
+
 
 		}
 
@@ -74,15 +76,21 @@ export default class Home extends React.Component{
 
 					var avg = sum/res.data.length;
     				var avgFixed = 0;
+    				var edit_animated_avgMark ="";
 
     				if (this.show) { //Nếu chưa hiển thị điểm thì không hiển thị tổng điểm
-    					var avgFixed = avg.toFixed(2)
+    					avgFixed = avg.toFixed(2);
+
+    					edit_animated_avgMark = 'animated jackInTheBox';
+    					
     				}
 
 			 		this.setState({
 			 				list: res.data,
 			 				avgMark:avgFixed,
 			 				show:this.show,
+			 				animated_avgMark: edit_animated_avgMark,
+
 			 			});
 
 			 		//Bắn pháo hoa khi show điểm
@@ -100,7 +108,7 @@ export default class Home extends React.Component{
 				<section className="container-fluid">
 					<div className="row">
 		                <Side  show={this.state.show}    supervisorArray={this.state.list.slice(0, 5)}  />
-						<Center avgMark={this.state.avgMark}  theLoai={this.state.theLoai}     division={this.state.division}   song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
+						<Center    animated_avgMark={this.state.animated_avgMark}  avgMark={this.state.avgMark}  theLoai={this.state.theLoai}     division={this.state.division}   song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
 						<Side show={this.state.show}   supervisorArray={this.state.list.slice(5, 10)}/>
 					</div>
 				</section>
