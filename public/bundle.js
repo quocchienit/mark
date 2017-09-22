@@ -23937,7 +23937,9 @@ var Home = function (_React$Component) {
 					var sum = 0;
 					_this2.show = 1; //Hiển thị điểm
 					for (var i = 0; i < res.data.length; i++) {
-						sum += parseInt(res.data[i].Diem, 10);
+						sum += parseFloat(res.data[i].Diem);
+
+						console.log(sum);
 						res.data[i].class_animated = 'animated flip';
 
 						if (res.data[i].Diem == 0) {

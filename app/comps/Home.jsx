@@ -62,6 +62,8 @@ export default class Home extends React.Component{
 					this.show = 1; //Hiển thị điểm
 					for( var i = 0; i < res.data.length; i++ ){
 					    sum += parseFloat( res.data[i].Diem); 
+
+					    console.log(sum);
 					    res.data[i].class_animated = 'animated flip';
 
 					    if (res.data[i].Diem == 0) { //Tồn tại 1 người chưa chấm điểm thì tắt hiển thị điểm
