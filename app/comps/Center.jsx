@@ -57,9 +57,6 @@ export default class Center extends React.Component{
 						</div>
 
 
-
-
-
 						<div className="avgMark">
 							<p></p>
 						</div>
