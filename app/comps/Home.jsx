@@ -23,11 +23,11 @@ export default class Home extends React.Component{
 
 			],
 			avgMark: 0,
-			song:'Trà Thanh nhiệt Dr. Thanh Công Phá Phố Hàng Nóng',
-			singer:'Ca sĩ',
+			song:'-',
+			singer:'-',
 			song_id:'',
-			division:'Khối',
-			theLoai:'Thể Loại ',
+			division:'-',
+			theLoai:'-',
 			show:0, //Hiển thị điểm
 			animated_avgMark:"", 
 

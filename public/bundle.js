@@ -23897,11 +23897,11 @@ var Home = function (_React$Component) {
 		_this.state = {
 			list: [{ GiamKhao: "TGĐ Ts. Trần Quí Thanh", Diem: 0, ChucDanh: '' }, { GiamKhao: "PTGĐ Trần Uyên Phương", Diem: 0, ChucDanh: '' }, { GiamKhao: "Nguyễn Văn Tư", Diem: 0, ChucDanh: 'GĐK R&D kiêm Dự án' }, { GiamKhao: "Ca sĩ Thu Hồng", Diem: 0, ChucDanh: '' }, { GiamKhao: "Ca sĩ – nhạc sĩ Sỹ Luân", Diem: 0, ChucDanh: '' }, { GiamKhao: "NSƯT Thy Phương", Diem: 0, ChucDanh: '' }, { GiamKhao: "Ca sĩ Khánh Phương", Diem: 0, ChucDanh: '' }, { GiamKhao: "Phan Hồng Sơn", Diem: 0, ChucDanh: 'Nhạc sĩ – NSƯT' }, { GiamKhao: "Ca sĩ A Tuân", Diem: 0, ChucDanh: '' }],
 			avgMark: 0,
-			song: 'Trà Thanh nhiệt Dr. Thanh Công Phá Phố Hàng Nóng',
-			singer: 'Ca sĩ',
+			song: '-',
+			singer: '-',
 			song_id: '',
-			division: 'Khối',
-			theLoai: 'Thể Loại ',
+			division: '-',
+			theLoai: '-',
 			show: 0, //Hiển thị điểm
 			animated_avgMark: ""
 
