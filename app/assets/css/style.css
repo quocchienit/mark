@@ -5,8 +5,9 @@ body {
     background-size: 100% 1050px;
 }
 
+
 .mark-center {
-    padding: 60px;
+       padding: 60px 0px;
 }
 
 #wrapper_canvas {
@@ -95,11 +96,15 @@ body {
     color: #ff0000;
     font-style: initial;
     font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
 }
 .singer-name{
     color: #1350dc;
     font-style: initial;
     font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
 
 }
 .division-name{
@@ -109,7 +114,7 @@ body {
 
 }
 .avgMark p{
-         position: absolute;
+    position: absolute;
     top: 35%;
     left: 48%;
     height: 30%;

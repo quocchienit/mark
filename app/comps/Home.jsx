@@ -23,7 +23,7 @@ export default class Home extends React.Component{
 
 			],
 			avgMark: 0,
-			song:'Tên bài hát',
+			song:'Trà Thanh nhiệt Dr. Thanh Công Phá Phố Hàng Nóng',
 			singer:'Ca sĩ',
 			song_id:'',
 			division:'Khối',
