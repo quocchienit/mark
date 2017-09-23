@@ -25174,21 +25174,34 @@ var Center = function (_React$Component) {
 							)
 						),
 						_react2.default.createElement(
-							'p',
-							null,
+							'div',
+							{ className: 'col-2' },
 							_react2.default.createElement(
-								'span',
-								{ className: 'label-name' },
-								'Kh\u1ED1i: '
-							),
+								'p',
+								null,
+								_react2.default.createElement(
+									'span',
+									{ className: 'label-name col' },
+									'Kh\u1ED1i: '
+								)
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-10' },
 							_react2.default.createElement(
-								'span',
-								{ className: 'singer-name' },
-								this.props.division,
-								' - ',
-								this.props.theLoai
-							),
-							' '
+								'p',
+								null,
+								_react2.default.createElement(
+									'span',
+									{ className: 'singer-name col' },
+									' ',
+									this.props.division,
+									' - ',
+									this.props.theLoai,
+									' '
+								)
+							)
 						)
 					),
 					_react2.default.createElement(

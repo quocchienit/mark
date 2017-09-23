@@ -22,7 +22,13 @@ export default class Center extends React.Component{
 							<div className="col-10">
 								<p><span className="song-name col">	{this.props.song} </span></p>
 							</div>
-							<p><span className="label-name">Khối: </span><span className="singer-name">{this.props.division} - {this.props.theLoai}</span> </p>
+							<div className="col-2">
+								<p><span className="label-name col">Khối: </span></p>
+							</div>
+							<div className="col-10">
+								<p><span className="singer-name col">	{this.props.division} - {this.props.theLoai} </span></p>
+							</div>
+
 						</div>
 
 						<div className="avgMark ">
