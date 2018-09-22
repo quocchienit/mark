@@ -42,7 +42,7 @@ export default class Home extends React.Component{
 	componentDidMount(){
 		setInterval(function(){
 
-			axios.get('http://192.168.23.2:88/Api/GetExam').then(res => {
+			axios.get('http://192.168.0.12:88/Api/GetExam').then(res => {
 				this.setState({
 			 				song:res.data.Name,
 			 				singer:res.data.UserName,
@@ -59,13 +59,12 @@ export default class Home extends React.Component{
 		 			
 		     });
 			
-			axios.get('http://192.168.23.2:88/Api/GetRecore').then(res => {
+			axios.get('http://192.168.0.12:88/Api/GetRecore').then(res => {
 					var sum = 0;
 					this.show = 1; //Hiển thị điểm
 					for( var i = 0; i < res.data.length; i++ ){
 					    sum += parseFloat( res.data[i].Diem); 
 
-					    console.log(sum);
 					    res.data[i].class_animated = 'animated flip';
 
 					    if (res.data[i].Diem == 0) { //Tồn tại 1 người chưa chấm điểm thì tắt hiển thị điểm

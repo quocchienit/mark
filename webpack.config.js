@@ -5,7 +5,7 @@ module.exports = {
 		filename: './public/bundle.js',
 	},
 	module :{
-		loaders:[
+		rules:[
 			{
 				loader: 'babel-loader',
 				query: {
