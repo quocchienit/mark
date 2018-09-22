@@ -36,36 +36,33 @@ export default class Home extends React.Component{
 
 		 this.show = 1; //Hiển thị điểm
 		 this.current_id = 1; //Bài hát hiện tại
+
+		 this.getExam.bind(this);
+		 this.getRecore.bind(this);
+
 	}
 
 
-	componentDidMount(){
-		setInterval(function(){
+	//Lấy bài hát mới
+	getExam(res) {
+		this.setState({
+			song:res.data.Name,
+			singer:res.data.UserName,
+			song_id:res.data.Id,
+			division:res.data.Division,
+			theLoai:res.data.TheLoai,
+		});
 
-			axios.get('http://192.168.0.12:88/Api/GetExam').then(res => {
+		//Nếu chuyển bài mới mở lại chức năng bắn pháo hoa
+		if (this.current_id != res.data.Id) {
+			this.firework = true;
+			this.current_id = res.data.Id;
+		}
+	}
 
-				// console.log(res);
-
-
-				this.setState({
-			 				song:res.data.Name,
-			 				singer:res.data.UserName,
-			 				song_id:res.data.Id,
-			 				division:res.data.Division,
-			 				theLoai:res.data.TheLoai,
-						 });
-						 
-
-					//Nếu chuyển bài mới mở lại chức năng bắn pháo hoa
-					if (this.current_id != res.data.Id) {
-						this.firework = true;
-						this.current_id = res.data.Id;
-					}
-		 			
-		     });
-			
-			axios.get('http://192.168.0.12:88/Api/GetRecore').then(res => {
-					var sum = 0;
+	//Lấy điểm chấm từ ban giám khảo
+	getRecore(res){
+				var sum = 0;
 					this.show = 1; //Hiển thị điểm
 					for( var i = 0; i < res.data.length; i++ ){
 					    sum += parseFloat( res.data[i].Diem); 
@@ -84,9 +81,7 @@ export default class Home extends React.Component{
 
     				if (this.show) { //Nếu chưa hiển thị điểm thì không hiển thị tổng điểm
     					avgFixed = avg.toFixed(2);
-
     					edit_animated_avgMark = 'animated jackInTheBox';
-    					
     				}
 
 			 		this.setState({
@@ -102,8 +97,53 @@ export default class Home extends React.Component{
 			 			$("#start").click();
 			 			this.firework = false;
 			 		}
-			 		
+	}
+
+	readTextFile(file){
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{
+						var allText = rawFile.responseText;
+						alert(allText);
+					}
+				}
+			}
+			rawFile.send(null);
+	}
+
+	componentDidMount(){
+
+		setInterval(function(){
+
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var isFile = url.searchParams.get("isFile");
+
+			if(isFile)
+			{
+				axios.get('http://localhost:3000/GetExam').then(res => {
+					this.getExam(res);
+				 });
+				 
+				axios.get('http://localhost:3000/GetRecore').then(res => {
+					this.getRecore(res);
+				});
+			}
+			else{
+			axios.get('http://192.168.0.12:88/Api/GetExam').then(res => {
+					this.getExam(res);
 		     });
+			
+			axios.get('http://192.168.0.12:88/Api/GetRecore').then(res => {
+					this.getRecore(res);
+			 });
+			}
+
 		}.bind(this), 3000);
 	}
 

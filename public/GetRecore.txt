@@ -1,0 +1,7 @@
+﻿[
+    {"ExamId":0,"ExaminerId":1,"GiamKhao":"Giám khảo 1","ChucDanh":null,"Diem":0},
+    {"ExamId":0,"ExaminerId":3,"GiamKhao":"Giám khảo 2","ChucDanh":null,"Diem":0},
+    {"ExamId":0,"ExaminerId":4,"GiamKhao":"Giám khảo 3","ChucDanh":null,"Diem":0},
+    {"ExamId":0,"ExaminerId":5,"GiamKhao":"Giám khảo 4","ChucDanh":null,"Diem":0},
+    {"ExamId":0,"ExaminerId":6,"GiamKhao":"Giám khảo 5","ChucDanh":null,"Diem":0}
+]

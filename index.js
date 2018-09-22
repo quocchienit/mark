@@ -7,22 +7,22 @@ app.listen(3000, function(){
 	console.log('sever start');
 });
 
+
+var fs = require('fs')
+
+
 app.get('/', function(req,res){
 	res.render('home');
 })
 
 
-app.get('/update', function(req,res){
-		var a =			[
-						{GiamKhao:"haha1", Diem: 4},
-						{GiamKhao:"haha2", Diem: 7.25},
-						{GiamKhao:"haha3", Diem: 9.75},
-						{GiamKhao:"haha4", Diem: 84},
-						{GiamKhao:"king5", Diem: 2},
-						{GiamKhao:"hunter6", Diem: 3},
-						{GiamKhao:"hehe7", Diem: 14},
-						{GiamKhao:"hehe8", Diem: 8},
-					]
+app.get('/GetExam', function(req,res){
+		var data = fs.readFileSync('public/GetExam.txt', 'utf8');
+		res.send(data);
+})
 
-		res.send(a);
+
+app.get('/GetRecore', function(req,res){
+		var data = fs.readFileSync('public/GetRecore.txt', 'utf8');
+		res.send(data);
 })
