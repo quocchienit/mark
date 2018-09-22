@@ -107,13 +107,38 @@ export default class Home extends React.Component{
 		}.bind(this), 3000);
 	}
 
+
+	converSupervisorArray  (supervisorArray)  {
+		let leftArray = [];
+		let rightArray = [];
+
+		for (let index = 0; index < supervisorArray.length; index++) {
+			const element = supervisorArray[index];
+			if(index%2){
+				rightArray.push(element);
+			}
+			else{
+				leftArray.push(element);
+			}
+			
+		}
+
+		return {
+			leftArray: leftArray,
+			rightArray: rightArray,
+		};
+
+
+	}
+
 	render(){
+		let supervisorArray = this.converSupervisorArray(this.state.list);
 		return (
 				<section className="container-fluid">
 					<div className="row">
-		                <Side  show={this.state.show}    supervisorArray={this.state.list.slice(0, 5)}  />
+		                <Side  show={this.state.show}    supervisorArray={supervisorArray.leftArray}  />
 						<Center    animated_avgMark={this.state.animated_avgMark}  avgMark={this.state.avgMark}  theLoai={this.state.theLoai}     division={this.state.division}   song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
-						<Side show={this.state.show}   supervisorArray={this.state.list.slice(5, 10)}/>
+						<Side show={this.state.show}   supervisorArray={supervisorArray.rightArray}/>
 					</div>
 				</section>
 		);
