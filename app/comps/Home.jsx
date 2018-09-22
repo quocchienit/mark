@@ -43,13 +43,18 @@ export default class Home extends React.Component{
 		setInterval(function(){
 
 			axios.get('http://192.168.0.12:88/Api/GetExam').then(res => {
+
+				// console.log(res);
+
+
 				this.setState({
 			 				song:res.data.Name,
 			 				singer:res.data.UserName,
 			 				song_id:res.data.Id,
 			 				division:res.data.Division,
 			 				theLoai:res.data.TheLoai,
-			 			});
+						 });
+						 
 
 					//Nếu chuyển bài mới mở lại chức năng bắn pháo hoa
 					if (this.current_id != res.data.Id) {
