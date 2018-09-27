@@ -1,12 +1,12 @@
 ﻿{
     "ExamDetails":[],
-    "Id":14,
-    "Name":"Múa",
-    "Department":"Múa Department",
-    "Division":"Múa Division",
-    "UserName":"Múa UserName",
+    "Id":15,
+    "Name":"Nhảy",
+    "Department":"Nhảy 11111111111",
+    "Division":"Nhảy 2222222222",
+    "UserName":"Nhảy UserName",
     "OrderBy":3,
     "Status":1,
     "RegisDate":"\/Date(1537519092113)\/",
-    "TheLoai":"Múa TheLoai"
+    "TheLoai":"Múa 33333333333"
 }
