@@ -15,15 +15,15 @@ body {
     top: 0;
 }
 
-.supervisor {
-    margin: 20px 60px 0px 60px;
-}
-
 #start {
     display: none;
 }
 
-.supervisor .mark_wrapper {
+.four  .supervisor {
+    margin: 20px 60px 0px 60px;
+}
+
+.four .supervisor .mark_wrapper {
     width: 100%;
        height: 120px;
     margin: auto;
@@ -33,7 +33,7 @@ body {
     border-radius: 15px;
 }
 
-.supervisor .mark_wrapper p {
+.four .supervisor .mark_wrapper p {
     position: absolute;
     top: 30%;
     left: 48%;
@@ -44,7 +44,7 @@ body {
     font-size: 69px;
 }
 
-.supervisor .name_wrapper {
+.four .supervisor .name_wrapper {
     width: 100%;
     min-height: 50px;
     margin: auto;
@@ -55,13 +55,112 @@ body {
     margin-top: 3px;
 }
 
-.supervisor .name_wrapper p {
+.four .supervisor .name_wrapper p {
     color: #1350dc;
     font-size: 39px;
     font-weight: bold;
     margin: -3px 0px;
         padding: 0px 10px;
 }
+
+
+
+.four  .supervisor {
+    margin: 20px 60px 0px 60px;
+}
+
+.four .supervisor .mark_wrapper {
+    width: 100%;
+       height: 120px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+}
+
+.four .supervisor .mark_wrapper p {
+    position: absolute;
+    top: 16%;
+    left: 48%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    color: #ff0000;
+    font-size: 95px;
+}
+
+.four .supervisor .name_wrapper {
+    width: 100%;
+    min-height: 50px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    margin-top: 3px;
+}
+
+.four .supervisor .name_wrapper p {
+    color: #1350dc;
+    font-size: 39px;
+    font-weight: bold;
+    margin: -3px 0px;
+        padding: 0px 10px;
+}
+
+/* ----------- */
+
+
+.five  .supervisor {
+    margin: 20px 60px 0px 60px;
+}
+
+.five .supervisor .mark_wrapper {
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+}
+
+.five .supervisor .mark_wrapper p {
+    position: absolute;
+    top: 30%;
+    left: 48%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    color: #ff0000;
+    font-size: 80px;
+}
+
+.five .supervisor .name_wrapper {
+    width: 100%;
+    min-height: 50px;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    margin-top: 3px;
+}
+
+.five .supervisor .name_wrapper p {
+    color: #1350dc;
+    font-size: 30px;
+    font-weight: bold;
+    margin: -3px 0px;
+        padding: 0px 10px;
+}
+
+.five .supervisor .mark_wrapper p img {
+    width: 85px;
+}
+
+
 .show-song{
     min-height: 133px;
     margin: auto;

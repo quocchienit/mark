@@ -173,9 +173,17 @@ export default class Home extends React.Component{
 
 	render(){
 		let supervisorArray = this.converSupervisorArray(this.state.list);
+
+		var classWrapper = "row four";
+
+		if(supervisorArray.leftArray.length > 4)
+		{
+			var classWrapper = "row five";
+		}
+
 		return (
 				<section className="container-fluid">
-					<div className="row">
+					<div className={classWrapper}>
 		                <Side  show={this.state.show}    supervisorArray={supervisorArray.leftArray}  />
 						<Center    animated_avgMark={this.state.animated_avgMark}  avgMark={this.state.avgMark}  theLoai={this.state.theLoai}     division={this.state.division}   song={this.state.song}    singer={this.state.singer}    song_id={this.state.song_id}    />
 						<Side show={this.state.show}   supervisorArray={supervisorArray.rightArray}/>

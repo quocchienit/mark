@@ -1,6 +1,12 @@
 ﻿[
-    {"ExamId":0,"ExaminerId":1,"GiamKhao":"Giám khảo 1","ChucDanh":null,"Diem":4},
-    {"ExamId":0,"ExaminerId":3,"GiamKhao":"Giám khảo 2","ChucDanh":null,"Diem":6},
-    {"ExamId":0,"ExaminerId":5,"GiamKhao":"Giám khảo 4","ChucDanh":null,"Diem":7},
-    {"ExamId":0,"ExaminerId":6,"GiamKhao":"Giám khảo 5","ChucDanh":null,"Diem":7}
+    {"ExamId":0,"ExaminerId":1,"GiamKhao":"Trần Quí Thanh","ChucDanh":"Tổng giám đốc","Diem":9},
+    {"ExamId":0,"ExaminerId":3,"GiamKhao":"Nguyễn Hữu Hiền","ChucDanh":"Tiến sỹ","Diem":2},
+    {"ExamId":0,"ExaminerId":5,"GiamKhao":"Phan Hồng Sơn","ChucDanh":"NSƯT","Diem":8},
+    {"ExamId":0,"ExaminerId":6,"GiamKhao":"Lê Chí Trung","ChucDanh":"Nhà biên kịch","Diem":4},
+    {"ExamId":0,"ExaminerId":7,"GiamKhao":"Hương Giang","ChucDanh":"Ca sĩ","Diem":9},
+    {"ExamId":0,"ExaminerId":8,"GiamKhao":"A Tuân","ChucDanh":"Ca - Nhạc sĩ","Diem":3},
+    {"ExamId":0,"ExaminerId":9,"GiamKhao":"Thu Hồng","ChucDanh":"Ca sĩ","Diem":4},
+    {"ExamId":0,"ExaminerId":10,"GiamKhao":"Hoàng Yến","ChucDanh":"NSƯT","Diem":5},
+    {"ExamId":0,"ExaminerId":11,"GiamKhao":"Giám Khảo 1","ChucDanh":"Ca sĩ","Diem":6},
+    {"ExamId":0,"ExaminerId":12,"GiamKhao":"Giám Khảo 2","ChucDanh":"Ca sĩ","Diem":7}
 ]

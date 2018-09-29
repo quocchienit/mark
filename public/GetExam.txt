@@ -1,12 +1,12 @@
 ﻿{
     "ExamDetails":[],
-    "Id":15,
-    "Name":"Nhảy",
+    "Id":88,
+    "Name":"Tên bài hát",
     "Department":"Nhảy 11111111111",
-    "Division":"Nhảy 2222222222",
+    "Division":"ICS",
     "UserName":"Nhảy UserName",
     "OrderBy":3,
     "Status":1,
     "RegisDate":"\/Date(1537519092113)\/",
-    "TheLoai":"Múa 33333333333"
+    "TheLoai":"Tam Ca "
 }
