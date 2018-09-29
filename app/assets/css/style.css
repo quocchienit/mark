@@ -128,7 +128,7 @@ body {
 
 .five .supervisor .mark_wrapper p {
     position: absolute;
-    top: 30%;
+    top: 15%;
     left: 48%;
     height: 30%;
     width: 50%;
@@ -157,7 +157,7 @@ body {
 }
 
 .five .supervisor .mark_wrapper p img {
-    width: 85px;
+    width: 75px;
 }
 
 
